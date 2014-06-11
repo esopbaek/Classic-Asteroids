@@ -3,11 +3,11 @@
   
   var Asteroid = Asteroids.Asteroid = function(pos, vel) {
     // inherit these attributes from moving object
-    MovingObject.call(this, pos, vel, Asteroid.RADIUS, Asteroid.COLOR);
+    Asteroids.MovingObject.call(this, pos, vel, Asteroids.Asteroid.RADIUS, Asteroids.Asteroid.COLOR);
   };
   
   Asteroid.COLOR = "gray";
-  Asteroid.RADIUS = 10;
+  Asteroid.RADIUS = 30;
   
   Asteroid.randomAsteroid = function(dimX, dimY) {
     return new Asteroid(
@@ -18,10 +18,10 @@
   
   Asteroid.randomVec = function() {
     // helper function fro randomAsteroid
-    return [Math.random() * 10 + 1, Math.random() * 10 + 1];
+    return [Math.random() * 20 - 10, Math.random() * 20 - 10];
   };
   
   // inherits is defined in helpers.js
-  Asteroid.inherits(MovingObject);
+  Asteroid.inherits(Asteroids.MovingObject);
   
 })(this)
