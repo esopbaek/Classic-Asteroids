@@ -1,27 +1,27 @@
 (function(root){
   var Asteroids = root.Asteroids = (root.Asteroids || {});
   
-  var Asteroid = Asteroids.Asteroid = function(pos, vel) {
+  var Asteroid = Asteroids.Asteroid = function(pos, vel, radius) {
     // inherit these attributes from moving object
-    Asteroids.MovingObject.call(this, pos, vel, Asteroids.Asteroid.RADIUS, Asteroids.Asteroid.COLOR);
-  };
-  
-  Asteroid.COLOR = "gray";
-  Asteroid.RADIUS = 30;
-  
-  Asteroid.randomAsteroid = function(dimX, dimY) {
-    return new Asteroid(
-      [dimX * Math.random(), dimY * Math.random()],
-      this.randomVec()
-    );
-  };
-  
-  Asteroid.randomVec = function() {
-    // helper function fro randomAsteroid
-    return [Math.random() * 20 - 10, Math.random() * 20 - 10];
+    Asteroids.MovingObject.call(this, pos, vel, radius, Asteroids.Asteroid.COLOR);
   };
   
   // inherits is defined in helpers.js
   Asteroid.inherits(Asteroids.MovingObject);
+  
+  Asteroid.COLOR = "gray";
+  Asteroid.RADIUS = 40;
+  
+  Asteroid.randomAsteroid = function(dimX, dimY) {
+    return new Asteroid(
+      [dimX * Math.random(), dimY * Math.random()],
+      this.randomVec(), Asteroids.Asteroid.RADIUS * Math.random() + 10
+    );
+  };
+  
+  Asteroid.randomVec = function() {
+    // helper function for randomAsteroid
+    return [Math.random() * 10 - 5, Math.random() * 10 - 5];
+  };
   
 })(this)
