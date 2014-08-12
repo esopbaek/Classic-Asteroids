@@ -20,8 +20,8 @@
     }
   };
   
-  Game.DIM_X = 800;
-  Game.DIM_Y = 600;
+  Game.DIM_X = 600;
+  Game.DIM_Y = 400;
   Game.FPS = 30;
   
   Game.prototype.draw = function() {
