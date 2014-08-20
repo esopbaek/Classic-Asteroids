@@ -36,9 +36,9 @@
     if (this.lives < 1) {
   		this.ctx.fillStyle = "white";
   		this.ctx.font = "20pt Arial";
-  		this.ctx.fillText("GAMEOVER", Game.DIM_X/2, Game.DIM_Y/2);
+  		this.ctx.fillText("GAMEOVER", Game.DIM_X/2 - 100, Game.DIM_Y/2);
   		this.ctx.font = "10pt Arial";
-  		this.ctx.fillText("press space to continue", Game.DIM_X/2, Game.DIM_Y/2 + 10)
+  		this.ctx.fillText("press space to continue", Game.DIM_X/2 - 100, Game.DIM_Y/2 + 10)
       this.gameOver = true;
     } 
     Game.prototype.newGame = function() {
@@ -197,9 +197,9 @@
     if (this.asteroids.length === 0) {
       var that = this;
       setInterval(function(){
-        that.ctx.font = "50pt Arial";
+        that.ctx.font = "30pt Arial";
         that.ctx.fillStyle = "white";
-        that.ctx.fillText("CONGRATS, YOU WIN!", Game.DIM_X/2 - 360, Game.DIM_Y/2);
+        that.ctx.fillText("CONGRATS, YOU WIN!", Game.DIM_X/2 - 220, Game.DIM_Y/2);
         that.bullets = []
       }, 60)
       this.ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);

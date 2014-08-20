@@ -21,7 +21,7 @@
   
   Asteroid.randomVec = function() {
     // helper function for randomAsteroid
-    return [Math.random() * 10 - 5, Math.random() * 10 - 5];
+    return [Math.random() * 6 - 3, Math.random() * 6 - 3];
   };
   
 })(this)
