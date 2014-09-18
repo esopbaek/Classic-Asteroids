@@ -10,18 +10,18 @@
   Asteroid.inherits(Asteroids.MovingObject);
   
   Asteroid.COLOR = "gray";
-  Asteroid.RADIUS = 40;
+  Asteroid.RADIUS = 25;
   
   Asteroid.randomAsteroid = function(dimX, dimY) {
     return new Asteroid(
       [dimX * Math.random(), dimY * Math.random()],
-      this.randomVec(), Asteroids.Asteroid.RADIUS * Math.random() + 10
+      this.randomVec(), Asteroids.Asteroid.RADIUS * Math.random() + 15
     );
   };
   
   Asteroid.randomVec = function() {
     // helper function for randomAsteroid
-    return [Math.random() * 6 - 3, Math.random() * 6 - 3];
+    return [Math.random() * 4 - 2, Math.random() * 4 - 2];
   };
   
 })(this)

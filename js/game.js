@@ -7,7 +7,7 @@
     this.asteroids = [];
     this.score = 0;
     this.lives = 3;
-    this.addAsteroids(8);
+    this.addAsteroids(6);
     this.ship = new Asteroids.Ship([Game.DIM_X/2, Game.DIM_Y/2], [0,0]);
     this.gameOver = false;
     this.bullets = [];
@@ -20,8 +20,8 @@
     }
   };
   
-  Game.DIM_X = 600;
-  Game.DIM_Y = 400;
+  Game.DIM_X = 500;
+  Game.DIM_Y = 325;
   Game.FPS = 30;
   
   Game.prototype.draw = function() {
@@ -46,7 +46,7 @@
       this.asteroids = [];
       this.score = 0;
       this.lives = 3;
-      this.addAsteroids(8);
+      this.addAsteroids(5);
       this.ship.pos[0] = Game.DIM_X/2
       this.ship.pos[1] = Game.DIM_Y/2
       this.bullets = [];
@@ -103,7 +103,7 @@
   Game.prototype.reset = function() {
       this.lives--;
       this.asteroids = [];
-      this.addAsteroids(8);
+      this.addAsteroids(6);
       this.ship = new Asteroids.Ship([Game.DIM_X/2, Game.DIM_Y/2], [0,0]);
       this.bullets = [];
       this.score = 0;
@@ -152,7 +152,7 @@
   };
   
   Game.prototype.splitAsteroid = function(asteroid) {
-    if (asteroid.radius > 30) {      
+    if (asteroid.radius > 25) {      
       this.asteroids.push(new Asteroids.Asteroid([asteroid.pos[0], asteroid.pos[1]], Asteroids.Asteroid.randomVec(), asteroid.radius/2))
       this.asteroids.push(new Asteroids.Asteroid([asteroid.pos[0], asteroid.pos[1]], Asteroids.Asteroid.randomVec(), asteroid.radius/2))
       this.removeAsteroid(asteroid)
